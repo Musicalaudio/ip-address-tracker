@@ -18,9 +18,18 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
       rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin="" />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""></script>
     <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="./styles/main.css" />
-    <script src="./main.js" defer></script>
+    <script src="./main.js" type="module" defer></script>
   </head>
   <body>
     <section class="ip-search wrapper">
@@ -29,6 +38,7 @@
         <input
           type="text"
           placeholder="Search for any IP address or domain"
+          class="ip-search__ip"
           required
           aria-label="Enter IP Address here" />
         <button type="submit" class="ip-search__form">
@@ -39,22 +49,27 @@
     <section class="stats">
       <div>
         <h2>IP Address</h2>
-        <p class="">test</p>
+        <p class="stats__ip">test</p>
       </div>
+      <hr aria-hidden="true" />
       <div>
         <h2>Location</h2>
-        <p class="">test</p>
+        <p class="stats__location">test</p>
       </div>
+      <hr aria-hidden="true" />
       <div>
         <h2>Timezone</h2>
-        <p class="">test</p>
+        <p class="stats__timezone">test</p>
       </div>
+      <hr aria-hidden="true" />
       <div>
         <h2>ISP</h2>
-        <p class="">test</p>
+        <p class="stats__isp">test</p>
       </div>
     </section>
-    <section class="map"></section>
+    <section class="map-section">
+      <div id="map"></div>
+    </section>
     <!-- add offset value dynamically using the API -->
 
     <div class="attribution">
